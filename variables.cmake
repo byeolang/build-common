@@ -31,7 +31,7 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
 set(BY_POD_EXTENSION "pod")
 set(BY_DEFAULT_INC_DIR
-    module
+    ${BY_MODULE_DIR}
     /usr/local/include)
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${BY_OUTPUT_DIR})
