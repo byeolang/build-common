@@ -8,22 +8,6 @@ if(build_common_included)
 endif()
 set_property(GLOBAL PROPERTY BUILD_COMMON_INCLUDED TRUE)
 
-# decide compiler:
-#   variables such as CXX_COMPILER_ID and COMPILER_IS_GNUCC remain unchanged.
-#   to resolve this issue, you must determine which compiler to use before calling
-#   the project() function.
-IF(NOT EMSCRIPTEN)
-    set(CMAKE_C_COMPILER "emcc")
-    set(CMAKE_CXX_COMPILER "emcc")
-ELSE()
-    find_program(CLANGPP_PATH clang++)
-    find_program(CLANG_PATH clang)
-    IF(CLANGPP_PATH)
-        set(CMAKE_CXX_COMPILER "${CLANGPP_PATH}")
-        set(CMAKE_C_COMPILER "${CLANG_PATH}")
-    ENDIF(CLANGPP_PATH)
-ENDIF(EMSCRIPTEN)
-
 set(SHOW_CMAKE_VARIABLES 1)
 
 include("${CMAKE_CURRENT_LIST_DIR}/variables.cmake")
