@@ -3,11 +3,12 @@ include_guard(GLOBAL)
 # include guard:
 get_property(build_common_included GLOBAL PROPERTY BUILD_COMMON_INCLUDED)
 if(build_common_included)
-    message("info: build-common.cmake should not be included more than once.")
+    message("info: buildCommon.cmake should not be included more than once.")
     return()
 endif()
 set_property(GLOBAL PROPERTY BUILD_COMMON_INCLUDED TRUE)
 
+message(STATUS "CLANGPP_PATH = ${CLANGPP_PATH}")
 set(SHOW_CMAKE_VARIABLES 1)
 
 include("${CMAKE_CURRENT_LIST_DIR}/variables.cmake")
