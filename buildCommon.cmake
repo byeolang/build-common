@@ -8,7 +8,6 @@ if(build_common_included)
 endif()
 set_property(GLOBAL PROPERTY BUILD_COMMON_INCLUDED TRUE)
 
-message(STATUS "CLANGPP_PATH = ${CLANGPP_PATH}")
 set(SHOW_CMAKE_VARIABLES 1)
 
 include("${CMAKE_CURRENT_LIST_DIR}/variables.cmake")

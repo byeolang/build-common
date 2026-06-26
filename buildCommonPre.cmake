@@ -10,11 +10,8 @@ endif()
 #   to resolve this issue, you must determine which compiler to use before calling
 #   the project() function.
 IF(NOT EMSCRIPTEN)
-    message(STATUS "NOT EMSCRIPTEN")
     find_program(CLANGPP_PATH clang++)
-    message(STATUS "CLANGPP_PATH = ${CLANGPP_PATH}")
     find_program(CLANG_PATH clang)
-    message(STATUS "CLANG_PATH = ${CLANG_PATH}")
     IF(CLANGPP_PATH)
         set(CMAKE_CXX_COMPILER "${CLANGPP_PATH}")
         set(CMAKE_C_COMPILER "${CLANG_PATH}")
